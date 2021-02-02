@@ -1,5 +1,75 @@
+<div class="container" id="home-container">
+    <div class="jumbotron text-center">
+        <h1 class="naglowek">Ekipa New Print Wita</h1>
+        <h2>Ty masz pomysł, my mamy umiejętności i narzędzia.</h2>
+        
+        <div class="row margin-bot margin-top">
+            <div class="col-sm">
+                <h2><%= fa_icon 'cogs' %> Profeska</h2>
+                <hr class="rounded">
+                <p>My jesteśmy profesjonalistami jakich mało. Nikt nie umie tyle co my. Wieloletnie doświadczenie
+                robi swoje</p>
+            </div>
+            <div class="col-sm">
+                <h2><%= fa_icon "thumbs-up" %> Zadowolenie</h2>
+                <hr class="rounded">
+                <p>Wybierając nas się nie zawiedzisz, zrobimy Ci najlepiej jak umiemy!</p>
+            </div>
+            <div class="col-sm">
+                <h2><%= fa_icon "hourglass-end" %> Profesjonalizm</h2>
+                <hr class="rounded">
+                <p>Każde zlecenie jest dla nas istotne, każda wizystówka ma znaczenie.</p>
+            </div>
+        </div>
+    </div>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+    <div class="row margin-bot" >
+        <div class="col-sm text-center">
+            <div class="inline-photo show-on-scroll">
+                <%= image_tag "van1_900x600.png",class:"img-fluid photo" %>
+            </div>
 
-<%= render 'layouts/footer'%>
+        </div>
+        <div class="col-sm text-center">
+            <div class="header2 show-on-scroll">
+                <h1 class="heading">Witamy w New Print!</h1>
+                <p class="heading">
+                    W naszej firmie od dawna zajmujemy się szeroko rozumianym drukiem. Wykonujemy banery reklamowe, okeljanie samochodów zarówno dużych i małych.
+                    Realizujemy nasze projekty od początku do końca. Zapoznaj się z realizacjami.
+                </p>
+            </div>
+            <div class="animacja-button show-on-scroll">
+                <%= link_to realizacje_path, class:"btn btn-outline-primary przyciski-home-right" do %>
+                    <h2>Realizacje</h2>
+                <% end %>
+             </div>
+        </div>
+    </div>
+
+    <div class="row margin-bot" >
+        <div class="col-sm text-center">
+            <div class="header2 show-on-scroll">
+              <h1 class="heading">Kompleksowe projekty!</h1>
+              <p class="heading">
+                Nasza firma stawia przede wszystkim na profesjonalizm. Już na etapie tworzenia projektu i wyceny mogą Państwo liczyć na nasze profesjonalne podejście.
+                Zapraszamy do kontaktu.
+              </p>
+            </div>
+             <div class="animacja-button show-on-scroll">
+              <%= link_to realizacje_path, class:"btn btn-outline-primary przyciski-home-left" do %>
+                <h2>Wycena
+                  <i class="right arrow icon"></i>
+                </h2>
+              <% end %>
+            </div>
+
+        </div>
+        <div class="col-sm text-center">
+            <div class="inline-photo show-on-scroll">
+                <%= image_tag "van2_900x600.png",class:"img-fluid photo" %>
+          </div> 
+        </div>
+    </div>
+</div>
+
+<%= javascript_pack_tag 'animacja_przycisku.js' %>
