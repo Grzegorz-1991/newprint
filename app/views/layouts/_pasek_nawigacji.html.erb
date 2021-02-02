@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg py-5 navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg py-4 navbar-dark bg-dark">
   <div class="container padding-container">
     <%= link_to 'New Print', root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,10 +19,10 @@
             Realizacje
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <%= link_to 'Busy', busy_index_path, class:'dropdown-item' %>
+            <%= link_to 'Dostawcze', '#', class:'dropdown-item' %>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <%= link_to 'Nowe Busy', new_busy_path, class:'dropdown-item' %>
           </div>
         </li>
       </ul>

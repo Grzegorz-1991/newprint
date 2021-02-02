@@ -1,0 +1,2 @@
+class Busy < ApplicationRecord
+end

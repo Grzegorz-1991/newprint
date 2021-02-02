@@ -1,0 +1,17 @@
+<div class="container">
+<div class='row mt-5'>
+<h3>Tryb administracyjny </h3>
+<%= link_to 'Dodaj realizację', new_busy_path, class:'btn btn-outline-success ml-3' %>
+</div>    
+    <% @busy.each do |busy|%>
+        <div class="card border-primary mt-5 mb-5">
+            <p class="ml-3"><%= busy.name %></p>
+            <button type="button" class="collapsibles">Opis realizacji</button>
+            <div class="content">
+                <p class="card-text mb-3"><%= busy.opis %></p>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<%= javascript_pack_tag 'collapsibles.js' %>

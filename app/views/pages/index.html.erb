@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+ <h2 class="mt-5">Zapoznaj się z naszymi realizacjami</h2>
+ </div>
+ <hr class="divider-index">
+    <div class="row mt-5 mb-5">
+        <div class="col-sm text-center d-flex row justify-content-md-center">
+            <div class="card" style="width: 20rem;">
+                <%= image_tag 'index_icon/bus-icon.jpg'%>
+                <div class="card-body">
+                    <p class="card-text">Zrealizowane oklejanie samochodów typu bus.</p>
+                    <%= link_to busy_index_path, class:'btn btn-lg mt-3 btn-outline-primary szer-przycisku' do %>
+                        <%= fa_icon('bus')%> <strong> Busy</strong>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm text-center d-flex row justify-content-md-center">
+            <div class="card" style="width: 20rem;">
+                <%= image_tag 'index_icon/truck-icon.jpg'%>
+                <div class="card-body">
+                    <p class="card-text">Zrealizowane oklejanie samochodów dostawczych.</p>
+                    <%= link_to '#', class:'btn btn-lg mt-3 btn-outline-primary szer-przycisku' do %>
+                        <%= fa_icon('truck')%> <strong> Dostawcze</strong>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm text-center d-flex row justify-content-md-center">
+            <div class="card" style="width: 20rem;">
+                <%= image_tag 'index_icon/car-icon.jpg'%>
+                <div class="card-body">
+                    <p class="card-text">Zrealizowane oklejanie samochodów osobowych.</p>
+                    <%= link_to '#', class:'btn btn-lg mt-3 btn-outline-primary szer-przycisku' do %>
+                        <%= fa_icon('car')%> <strong> Osobowe</strong>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
