@@ -1,9 +1,8 @@
-<% @akcja = 'new'%>
 <div class="container">
     <div class='row mt-5 mb-5'>
         <div class="col-sm">
             <div class="row">
-                <h2>Dodanie nowej realizacji</h2>
+                <h2>Edycja busów</h2>
             </div>
         </div>
         <div class="col-sm text-right">
@@ -13,4 +12,4 @@
         </div>
     </div>    
 </div>
-<%= render partial: 'form_template', locals: {busy: @busy, url: busy_index_path}%>
+<%= render partial: 'form_template', locals: {busy: @busy, url: busy_path(@busy)}%>

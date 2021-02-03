@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+        <%= form_with(model: busy, url: url, class: "mb-3", local: true)  do |f| %>
+            <div class="form-group row">
+                <%= f.label :nazwa, class: "col-1 mr-2 col-form-label font-weight-bold" %>
+                <div class="col-12">
+                <%= f.text_field :name, class: "form-control", placeholder: "Nazwa realizacji" %>
+                </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :opis, class: "col-1 mr-2 col-form-label font-weight-bold" %>
+              <div class="col-12"> 
+                <%= f.text_area :opis, rows: 5, class: "form-control", placeholder: "Opis realizacji" %>
+              </div>
+            </div>
+            <div class="form-group row justify-content-center">
+                <% if @akcja == 'new'%>
+                    <%= f.submit 'Dodaj', class: "btn btn-outline-success" %>
+                <% else %>
+                    <%= f.submit 'Edytuj', class: "btn btn-outline-success" %>
+                <% end %>
+            </div>
+        <% end %>
+
+        </div>
+    </div>
+</div>

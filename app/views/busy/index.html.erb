@@ -1,14 +1,37 @@
 <div class="container">
-<div class='row mt-5'>
-<h3>Tryb administracyjny </h3>
-<%= link_to 'Dodaj realizację', new_busy_path, class:'btn btn-outline-success ml-3' %>
+<div class="row mt-5">
+    <h3>Tryb administracyjny </h3>
+    <%= link_to 'Dodaj realizację', new_busy_path, class:'btn btn-outline-success ml-3' %>
+</div>
+<div class='row mt-1'>
+    <div class="col-sm">
+        <div class="row">
+            <h2>Realizacje busów</h2>
+        </div>
+    </div>
+    <div class="col-sm text-right">
+        <%= link_to realizacje_path, class:'btn btn-primary button-index'  do %>
+        <strong><%= fa_icon 'hand-point-left' %> Powrót</strong>
+        <% end %>
+    </div>
 </div>    
     <% @busy.each do |busy|%>
         <div class="card border-primary mt-5 mb-5">
-            <p class="ml-3"><%= busy.name %></p>
-            <button type="button" class="collapsibles">Opis realizacji</button>
-            <div class="content">
-                <p class="card-text mb-3"><%= busy.opis %></p>
+            <div class="card-body">
+                <div class="row mb-1">
+                    <div class="col-sm">
+                        <p class="ml-3"><%= busy.name %></p>
+                    </div>
+                    <div class="col-sm text-right">
+                        <%= link_to "Usuń", busy_path(busy), class: "btn btn-outline-danger button-index", method: :delete, data: {confirm: "Na pewno usunąć?"}  %>
+                        <%= link_to 'Edytuj', edit_busy_path(busy), class:'btn btn-outline-info button-index' %>
+                        <%= link_to 'Pokaż', busy_path(busy), class:'btn btn-outline-primary button-index' %>
+                    </div>
+                </div>
+                <button type="button" class="collapsibles">Opis realizacji</button>
+                <div class="content">
+                    <p class="card-text mb-3"><%= busy.opis %></p>
+                </div>
             </div>
         </div>
     <% end %>
