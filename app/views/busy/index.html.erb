@@ -1,7 +1,9 @@
 <div class="container">
 <div class="row mt-5">
-    <h3>Tryb administracyjny </h3>
-    <%= link_to 'Dodaj realizację', new_busy_path, class:'btn btn-outline-success ml-3' %>
+    <% if logged_in? %>
+        <h3>Tryb administracyjny </h3>
+        <%= link_to 'Dodaj realizację', new_busy_path, class:'btn btn-outline-success ml-3' %>
+    <% end %>
 </div>
 <div class='row mt-1'>
     <div class="col-sm">
@@ -23,8 +25,10 @@
                         <p class="ml-3"><%= busy.name %></p>
                     </div>
                     <div class="col-sm text-right">
-                        <%= link_to "Usuń", busy_path(busy), class: "btn btn-outline-danger button-index", method: :delete, data: {confirm: "Na pewno usunąć?"}  %>
-                        <%= link_to 'Edytuj', edit_busy_path(busy), class:'btn btn-outline-info button-index' %>
+                        <% if logged_in? %>
+                            <%= link_to "Usuń", busy_path(busy), class: "btn btn-outline-danger button-index", method: :delete, data: {confirm: "Na pewno usunąć?"}  %>
+                            <%= link_to 'Edytuj', edit_busy_path(busy), class:'btn btn-outline-info button-index' %>
+                        <% end %>
                         <%= link_to 'Pokaż', busy_path(busy), class:'btn btn-outline-primary button-index' %>
                     </div>
                 </div>

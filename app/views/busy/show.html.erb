@@ -1,11 +1,11 @@
 <div class="container">
 <div class='row mt-5'>
     <div class="col-sm">
-        <div class="row">
-            <h2>Realizacje busów</h2>
+        <div class="row mt-1">
+            <h2>Realizacja <%= @busy.name %></h2>
         </div>
     </div>
-    <div class="col-sm text-right">
+    <div class="col-sm text-right mt-1">
         <%= link_to busy_index_path, class:'btn btn-primary button-index'  do %>
         <strong><%= fa_icon 'hand-point-left' %> Powrót</strong>
         <% end %>
@@ -18,9 +18,10 @@
                     <p class="ml-3"><%= @busy.name %></p>
                 </div>
                 <div class="col-sm text-right">
-                    <%= link_to "Usuń", busy_path(@busy), class: "btn btn-outline-danger button-index", method: :delete, data: {confirm: "Na pewno usunąć?"}  %>
-                    <%= link_to 'Edytuj', edit_busy_path(@busy), class:'btn btn-outline-info button-index' %>
-                    <%= link_to 'Pokaż', busy_path(@busy), class:'btn btn-outline-primary button-index' %>
+                    <% if logged_in? %>
+                        <%= link_to "Usuń", busy_path(@busy), class: "btn btn-outline-danger button-index", method: :delete, data: {confirm: "Na pewno usunąć?"}  %>
+                        <%= link_to 'Edytuj', edit_busy_path(@busy), class:'btn btn-outline-info button-index' %>
+                    <% end %>
                 </div>
             </div>
             <button type="button" class="collapsibles">Opis realizacji</button>
