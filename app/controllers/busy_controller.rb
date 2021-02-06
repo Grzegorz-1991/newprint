@@ -43,7 +43,7 @@ class BusyController < ApplicationController
 
     private
     def busy_params
-        params.require(:busy).permit(:name,:opis)
+        params.require(:busy).permit(:name,:opis, images:[])
     end
 
     def set_busy

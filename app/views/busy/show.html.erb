@@ -13,6 +13,16 @@
 </div>    
     <div class="card border-primary mt-5 mb-5">
         <div class="card-body">
+            <div class="row text-center text-lg-left">
+                <% (0...@busy.images.count).each do |image|%>
+                <div class="col-lg-6 col-md-4 col-6">
+                    <div class = "d-block mb-4 h-100">
+                        <%= image_tag(@busy.images[image], style: 'display: block; margin: 25px; width: 80%;') %>
+                    </div>
+                </div>
+                <% end %>
+
+            </div>
             <div class="row mb-1">
                 <div class="col-sm">
                     <p class="ml-3"><%= @busy.name %></p>

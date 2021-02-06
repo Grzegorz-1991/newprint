@@ -1,44 +1,75 @@
 <div class="container">
-<div class="row mt-5">
-    <% if logged_in? %>
-        <h3>Tryb administracyjny </h3>
-        <%= link_to 'Dodaj realizację', new_busy_path, class:'btn btn-outline-success ml-3' %>
-    <% end %>
-</div>
-<div class='row mt-1'>
-    <div class="col-sm">
-        <div class="row">
-            <h2>Realizacje busów</h2>
-        </div>
-    </div>
-    <div class="col-sm text-right">
-        <%= link_to realizacje_path, class:'btn btn-primary button-index'  do %>
-        <strong><%= fa_icon 'hand-point-left' %> Powrót</strong>
+    <div class="row mt-5">
+        <% if logged_in? %>
+            <h3>Tryb administracyjny </h3>
+            <%= link_to 'Dodaj realizację', new_busy_path, class:'btn btn-outline-success ml-3' %>
         <% end %>
     </div>
-</div>    
-    <% @busy.each do |busy|%>
-        <div class="card border-primary mt-5 mb-5">
-            <div class="card-body">
-                <div class="row mb-1">
-                    <div class="col-sm">
-                        <p class="ml-3"><%= busy.name %></p>
-                    </div>
-                    <div class="col-sm text-right">
-                        <% if logged_in? %>
-                            <%= link_to "Usuń", busy_path(busy), class: "btn btn-outline-danger button-index", method: :delete, data: {confirm: "Na pewno usunąć?"}  %>
-                            <%= link_to 'Edytuj', edit_busy_path(busy), class:'btn btn-outline-info button-index' %>
-                        <% end %>
-                        <%= link_to 'Pokaż', busy_path(busy), class:'btn btn-outline-primary button-index' %>
-                    </div>
-                </div>
-                <button type="button" class="collapsibles">Opis realizacji</button>
-                <div class="content">
-                    <p class="card-text mb-3"><%= busy.opis %></p>
-                </div>
+    <div class='row mt-1'>
+        <div class="col-sm">
+            <div class="row">
+                <h2>Realizacje busów</h2>
             </div>
         </div>
-    <% end %>
+        <div class="col-sm text-right">
+            <%= link_to realizacje_path, class:'btn btn-primary button-index'  do %>
+            <strong><%= fa_icon 'hand-point-left' %> Powrót</strong>
+            <% end %>
+        </div>
+    </div>    
+        <% @busy.each do |busy|%>
+            <div class="card border-primary mt-5 mb-5">
+                <div class="card-body">
+                    <div class="row">
+                        <% if busy.images[0] != nil %>
+                            <% div_id = busy.name -%>
+                                
+                            <div id="<%= div_id -%>" class="carousel slide mx-auto mt-2" data-ride="carousel" data-wrap="false" data-interval="false" style ="width: 1100px; height: 600px">
+                                
+                                    <div class="carousel-inner " >
+                                        <div class = "carousel-item active" style ="width: 1100px; height: 550px">
+                                            <%= image_tag(busy.images[0],class:'d-block w-75 h-100 m-auto') %>
+                                        </div>
+                                        <% (1...busy.images.count).each do |image|%>
+                                            <div class = "carousel-item" style ="width: 1100px; height: 550px">
+                                                <%= image_tag(busy.images[image], class:'d-block w-75 h-100 mx-auto') %>
+                                            </div>
+                                        <% end %>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#<%= div_id -%>" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#<%= div_id -%>" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                
+                            </div>
+                        <% end %>
+                    </div>
+                        <div class="row mb-1">
+                            <div class="col-sm">
+                                <p class="ml-3"><%= busy.name %></p>
+                            </div>
+                            <div class="col-sm text-right">
+                                <% if logged_in? %>
+                                    <%= link_to "Usuń", busy_path(busy), class: "btn btn-outline-danger button-index", method: :delete, data: {confirm: "Na pewno usunąć?"}  %>
+                                    <%= link_to 'Edytuj', edit_busy_path(busy), class:'btn btn-outline-info button-index' %>
+                                <% end %>
+                                <%= link_to 'Pokaż', busy_path(busy), class:'btn btn-outline-primary button-index' %>
+                            </div>
+                        </div>
+                        <button type="button" class="collapsibles">Opis realizacji</button>
+                        <div class="content">
+                            <p class="card-text mb-3"><%= busy.opis %></p>
+                        </div>
+                
+                </div>
+            </div>
+        <% end %>
+    </div>
+        
 </div>
 
 <%= javascript_pack_tag 'collapsibles.js' %>
