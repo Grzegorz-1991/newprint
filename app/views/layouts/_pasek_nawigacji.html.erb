@@ -1,6 +1,10 @@
-<nav class="navbar navbar-expand-lg py-4 navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg py-4 navbar-custom">
   <div class="container padding-container">
-    <%= link_to 'New Print', root_path, class: "navbar-brand" %>
+    <%= link_to root_path do %>
+      <% if request.path != root_path %>
+        <%= image_tag 'home/logo_male.jpg'%>
+      <% end %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,21 +13,22 @@
         <% if logged_in? %>
           <h2>Tryb admina</h2>
           <%= link_to wyloguj_path, class:"btn btn-outline-danger button-index ml-auto", method: :delete do %>
-            <strong class="align-middle">Wyloguj
+            <strong class="align-middle">Wyloguj</strong>
           <% end %>
         <% end %>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item <%= 'active' if request.path == cennik_path %>">
-          <%= link_to 'Cennik', cennik_path, class: "nav-link" %>
+        <li class="nav-item right-border mr-3 ml-3 <%= 'active' if request.path == cennik_path %>">
+          <strong><%= link_to 'Cennik', cennik_path, class: "nav-link" %></strong>
         </li>
-        <li class="nav-item <%= 'active' if request.path == kontakt_path %>">
-          <%= link_to 'Kontakt', kontakt_path, class: "nav-link" %>
+        <li class="nav-item right-border mr-4 ml-2 <%= 'active' if request.path == kontakt_path %>">
+          <strong><%= link_to 'Kontakt', kontakt_path, class: "nav-link" %></strong>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Realizacje
+           <strong>Realizacje</strong>
           </a>
+          </strong>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Busy', busy_index_path, class:'dropdown-item' %>
             <%= link_to 'Dostawcze', '#', class:'dropdown-item' %>

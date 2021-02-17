@@ -12,8 +12,8 @@ p {
 }
 .naglowek {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 70px;
-    color: blue;
+    font-size: 25px;
+    color: rgb(77, 77, 77);
 }
 .nav-link, .navbar-brand {
     font-size: 25px;
@@ -53,10 +53,41 @@ body {
 
 /* Stylizacja Cointenera Navbara */
 .padding-container {
-    padding-left: 8%;
+    padding-left: 0%;
     padding-right: 8%;
 }
+.logo-male {
+    height: 5px;
+}
 
+/* Customizacja navbara */
+.navbar {
+    border-bottom: 2px solid #000;
+}
+.navbar-custom {
+    background-color: white;
+    
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(0, 0, 0, 0.8);
+}
+.nav-item {
+    width: 130px;
+}
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: rgba(43, 143, 236, 0.8);
+}
+
+.right-border {
+    border-right: 1px solid black;
+}
 /* Stylizacja marginesow */
 
 .margin-bot {
@@ -101,3 +132,12 @@ hr.rounded {
 .carousel-inner > .item > img {
   margin: 0 auto;
 }
+
+#border {
+    border-width:6px;
+    border-radius: 6px;
+    border-style:groove;
+    border-color:black;
+    padding:0.6em;
+    background-color:#ffffff;
+  }

@@ -1,24 +1,23 @@
 <div class="container" id="home-container">
     <div class="jumbotron text-center">
-        <h1 class="naglowek">Ekipa New Print Wita</h1>
-        <h2>Ty masz pomysł, my mamy umiejętności i narzędzia.</h2>
+        <%= image_tag 'home/logo.jpg' %>
+        <h2 class="naglowek">Twoje pomysły nabierają kolorów</h2>
         
         <div class="row margin-bot margin-top">
             <div class="col-sm">
-                <h2><%= fa_icon 'cogs' %> Profeska</h2>
+                <h2><%= fa_icon 'cogs' %> Profesjonalizm</h2>
                 <hr class="rounded">
-                <p>My jesteśmy profesjonalistami jakich mało. Nikt nie umie tyle co my. Wieloletnie doświadczenie
-                robi swoje</p>
+                <p>Wieloletnie doświadczenie przekłada się na profesjonalne podejście do każdego zlecenia.</p>
             </div>
             <div class="col-sm">
                 <h2><%= fa_icon "thumbs-up" %> Zadowolenie</h2>
                 <hr class="rounded">
-                <p>Wybierając nas się nie zawiedzisz, zrobimy Ci najlepiej jak umiemy!</p>
+                <p>Satysafkacja klienta to priorytet dla naszej firmy, dokładamy wszelkich starań, aby spełnić wszelkie oczekiwania.</p>
             </div>
             <div class="col-sm">
-                <h2><%= fa_icon "hourglass-end" %> Profesjonalizm</h2>
+                <h2><%= fa_icon "hourglass-end" %> Terminowość</h2>
                 <hr class="rounded">
-                <p>Każde zlecenie jest dla nas istotne, każda wizystówka ma znaczenie.</p>
+                <p>Czas to pieniądz i my o tym wiemy - usługi wykonywane na czas to podstawa naszej firmy.</p>
             </div>
         </div>
     </div>
@@ -26,7 +25,7 @@
     <div class="row margin-bot" >
         <div class="col-sm text-center">
             <div class="inline-photo show-on-scroll">
-                <%= image_tag "van1_900x600.png",class:"img-fluid photo" %>
+                <%= image_tag "home/greym4.jpg",class:"img-fluid photo", id:"border" %>
             </div>
 
         </div>
@@ -66,7 +65,7 @@
         </div>
         <div class="col-sm text-center">
             <div class="inline-photo show-on-scroll">
-                <%= image_tag "van2_900x600.png",class:"img-fluid photo" %>
+                <%= image_tag "home/owoce.jpg",class:"img-fluid photo",id: 'border' %>
           </div> 
         </div>
     </div>
