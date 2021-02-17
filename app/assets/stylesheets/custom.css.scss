@@ -81,7 +81,8 @@ body {
 }
 
 .navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
+.navbar-custom .nav-item:hover .nav-link,
+.navbar-custom .navbar-toggler {
     color: rgba(43, 143, 236, 0.8);
 }
 
